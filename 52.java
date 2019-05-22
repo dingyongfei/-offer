@@ -17,16 +17,16 @@ public class Solution {
 		}
 		if (patternIndex + 1 < pattern.length && pattern[patternIndex + 1] == '*') {
 			if ((strIndex != str.length && pattern[patternIndex] == str[strIndex]) || 
-                (pattern[patternIndex] == '.' && strIndex != str.length)) {
+                	    (pattern[patternIndex] == '.' && strIndex != str.length)) {
 				return matchCore(str, strIndex, pattern, patternIndex + 2) || 
-					   matchCore(str, strIndex + 1, pattern, patternIndex + 2) || 
-					   matchCore(str, strIndex + 1, pattern, patternIndex);
+				       matchCore(str, strIndex + 1, pattern, patternIndex + 2) || 
+				       matchCore(str, strIndex + 1, pattern, patternIndex);
 			} else {
 				return matchCore(str, strIndex, pattern, patternIndex + 2);
 			}
 		}
 		if ((strIndex != str.length && pattern[patternIndex] == str[strIndex]) || 
-            (pattern[patternIndex] == '.' && strIndex != str.length)) {
+            	    (pattern[patternIndex] == '.' && strIndex != str.length)) {
 			return matchCore(str, strIndex + 1, pattern, patternIndex + 1);
 		}
 		return false;
