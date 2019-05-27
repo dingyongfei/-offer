@@ -5,7 +5,7 @@ public class Solution {
 			TreeNode node = KthNode(root.left,k);
 			if (node != null) 
 				return node;
-				index++;
+			index++;
 			if (index == k)
 				return root;
 			node = KthNode(root.right,k);
